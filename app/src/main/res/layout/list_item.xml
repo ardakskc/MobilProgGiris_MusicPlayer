@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:background="#F8C7D9"
+    >
+
+    <ImageView
+        android:id="@+id/icon_mus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        app:srcCompat="@drawable/mscphoto" />
+
+    <TextView
+        android:id="@+id/mus_tit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_toEndOf="@id/icon_mus"
+        android:text="Hırka"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/mus_art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/icon_mus"
+        android:text="Onurcan Özcan"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/mus_dur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@id/mus_art"
+        android:text="01:26"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <ImageButton
+        android:id="@+id/share"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="80dp"
+        android:backgroundTint="@color/purple_200"
+        android:visibility="visible"
+        android:layout_toEndOf="@id/mus_dur"
+        app:srcCompat="@drawable/ic_baseline_share_24"
+        app:tint="#000000" />
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="25dp"
+        android:backgroundTint="@color/purple_200"
+        android:visibility="visible"
+        android:layout_toEndOf="@id/mus_dur"
+        app:srcCompat="@drawable/ic_baseline_delete_24"
+        app:tint="#000000" />
+
+</RelativeLayout>
