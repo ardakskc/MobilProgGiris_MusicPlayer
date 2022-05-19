@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
@@ -35,11 +36,16 @@ public class Music_List extends AppCompatActivity {
     protected TextView noSong,textView11,textView12,textView13;
     protected ArrayList<AudioFile> list = new ArrayList<>();
     protected ImageButton play_pause;
+    protected SensorChangeReceiver sensorChangeReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list);
+        sensorChangeReceiver = new SensorChangeReceiver();
+
+        IntentFilter filter = new IntentFilter("com.example.sensor");
+        registerReceiver(sensorChangeReceiver, filter);
 
         play_pause = (ImageButton)findViewById(R.id.imageButton_list);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -194,4 +200,9 @@ public class Music_List extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(sensorChangeReceiver);
+    }
 }
